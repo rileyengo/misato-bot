@@ -1,8 +1,10 @@
 import discord
+import os
 from discord.ext import commands
+from os import environ
 
 bot = commands.Bot(command_prefix='?')
-TOKEN = environ['TOKEN']
+TOKEN = os.environ['TOKEN']
 
 @bot.event
 async def on_ready():
