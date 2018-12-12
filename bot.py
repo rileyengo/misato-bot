@@ -1,6 +1,6 @@
 import discord
 import os
-import datetime
+# import datetime
 from discord.ext import commands
 from os import environ
 
@@ -14,9 +14,18 @@ async def on_ready():
     print(bot.user.id)
     print('------')
 
+############################
+### ?greet - hello there ###
+############################ 
+
 @bot.command()
 async def greet(ctx):
     await ctx.send(":smiley: :wave: Hello, there!")
+
+###########################
+### ?dice - Roll a dice ###
+###########################
+
 @bot.command()
 async def roll(dice : str):
     """Rolls a dice in NdN format."""
@@ -27,7 +36,11 @@ async def roll(dice : str):
         return
 
     result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
-    await bot.say(result)
+    await bot.say(':dice:' + result)
+
+###################################
+### ?katsuragi - goddamn embeds ###
+###################################
 
 @bot.command()
 async def katsuragi(ctx):
