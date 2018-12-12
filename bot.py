@@ -20,7 +20,7 @@ async def greet(ctx):
 
 @bot.command()
 async def katsuragi(ctx):
-	embed = discord.Embed(colour=discord.Colour(0x45168b), url="https://discordapp.com", description="**Misato** is the operations director at NERV, initially with the rank of captain; she is later promoted to major.", timestamp=datetime.datetime.utcfromtimestamp(1544417910))
+	embed = discord.Embed(colour=discord.Colour(0x45168b), url="https://discordapp.com", description="**Misato** is the operations director at NERV, initially with the rank of captain; she is later promoted to major.", timestamp=datetime.datetime.now())
 	embed.set_thumbnail(url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp-bIMBDrqyGVeaIVK2zDlY9Vjvc8GxXml56C7ASiOeIVTEqqubw")
 	embed.set_author(name="Misato Katsuragi", icon_url="https://pbs.twimg.com/profile_images/729166941/Misato_Katsuragi_400x400.jpg")
 	embed.set_footer(text=message.author, icon_url=message.author.avatar_url)
