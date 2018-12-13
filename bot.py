@@ -6,6 +6,7 @@ from os import environ
 
 bot = commands.Bot(command_prefix='?')
 TOKEN = os.environ['TOKEN']
+client = discord.Client()
 
 @bot.event
 async def on_ready():
@@ -13,6 +14,7 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('------')
+	await client.change_presence(game=discord.Game(name='NERV HQ'))
 
 ############################
 ### ?greet - hello there ###
