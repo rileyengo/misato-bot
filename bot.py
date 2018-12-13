@@ -14,7 +14,7 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('------')
-	await client.change_presence(game=discord.Game(name='NERV HQ'))
+	await client.change_presence(game=discord.Game(name='NERV HQ')
 
 ############################
 ### ?greet - hello there ###
