@@ -14,7 +14,7 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('------')
-    await bot.change_presence(activity=discord.Game(name='NERV HQ'))
+    await bot.change_presence(activity=discord.Game(name='Evangelion 3.0+1.0'))
 
 ############################
 ### ?greet - hello there ###
