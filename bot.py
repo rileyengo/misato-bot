@@ -54,6 +54,6 @@ async def katsuragi(ctx):
 	embed.add_field(name='Affiliation', value='NERV', inline=True)
 	embed.add_field(name='Position', value='Lieutenant Colonel', inline=True)
 	embed.set_footer(text=discord.Message.author)
-	await self.bot.say(embed=embed)
+	await ctx.send(embed=embed)
 
 bot.run(TOKEN)
