@@ -75,7 +75,7 @@ async def shinji(ctx):
 
 @character.command()
 async def asuka(ctx):
-	if ctx.invoked_subcommand is 'rebuild' or 'shikinami' or 'langley shikinami':
+	if ctx.invoked_subcommand is 'rebuild' or ctx.invoked_subcommand is 'shikinami' or ctx.invoked_subcommand is 'langley shikinami':
 		embed=discord.Embed(title='Asuka Langley Shikinami', description='"Pretending to have fun with others will only wear me out."', color=13632027)
 		embed.set_author(name='Misato Katsuragi',icon_url='https://static.giantbomb.com/uploads/original/9/99864/2406901-_utw_thora__evangelion_2.22___you_can__not__advance__bd__1080p_x264_dts_es__8b521921_.mkv_snapshot_01.51.57__2013.01.03_08.02.12_.png')
 		embed.set_thumbnail(url='https://static.giantbomb.com/uploads/original/9/99864/2406901-_utw_thora__evangelion_2.22___you_can__not__advance__bd__1080p_x264_dts_es__8b521921_.mkv_snapshot_01.51.57__2013.01.03_08.02.12_.png')
