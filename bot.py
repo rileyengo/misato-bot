@@ -58,7 +58,7 @@ async def misato(ctx):
 	embed.add_field(name='Age', value=29, inline=True)
 	embed.add_field(name='Affiliation', value='NERV', inline=True)
 	embed.add_field(name='Title', value='Lieutenant Colonel', inline=True)
-	embed.set_footer(text=ctx.author)
+	embed.set_footer(text=ctx.author, icon_url=ctx.author.icon_url)
 	await ctx.send(embed=embed)
 
 @character.command(aliases=['ikari', 'shin', 'Shinji', 'Ikari'])
@@ -70,7 +70,7 @@ async def shinji(ctx):
 	embed.add_field(name='Age', value=14, inline=True)
 	embed.add_field(name='Affiliation', value='NERV', inline=True)
 	embed.add_field(name='Title', value='Third Child', inline=True)
-	embed.set_footer(text=ctx.author)
+	embed.set_footer(text=ctx.author, icon_url=ctx.author.icon_url)
 	await ctx.send(embed=embed)
 
 @character.command(aliases=['Asuka', 'Langley'])
@@ -83,7 +83,7 @@ async def asuka(ctx):
 		embed.add_field(name='Age', value=14, inline=True)
 		embed.add_field(name='Affiliation', value='NERV', inline=True)
 		embed.add_field(name='Position', value='Second Child', inline=True)
-		embed.set_footer(text=ctx.author)
+		embed.set_footer(text=ctx.author, icon_url=ctx.author.icon_url)
 		await ctx.send(embed=embed)
 	else:
 		embed=discord.Embed(title='Asuka Langley Soryu', description='"It is simply the duty of the elite to protect the ignorant masses."', color=13632027)
@@ -93,7 +93,7 @@ async def asuka(ctx):
 		embed.add_field(name='Age', value=14, inline=True)
 		embed.add_field(name='Affiliation', value='NERV', inline=True)
 		embed.add_field(name='Position', value='Second Child', inline=True)
-		embed.set_footer(text=ctx.author)
+		embed.set_footer(text=ctx.author, icon_url=ctx.author.icon_url)
 		await ctx.send(embed=embed)
 @character.command(aliases=['ayanami', 'Rei', 'Ayanami'])
 async def rei(ctx):
@@ -104,7 +104,7 @@ async def rei(ctx):
 	embed.add_field(name='Age', value=14, inline=True)
 	embed.add_field(name='Affiliation', value='NERV', inline=True)
 	embed.add_field(name='Title', value='First Child', inline=True)
-	embed.set_footer(text=ctx.author)
+	embed.set_footer(text=ctx.author, icon_url=ctx.author.icon_url)
 	await ctx.send(embed=embed)
 
 bot.run(TOKEN)
