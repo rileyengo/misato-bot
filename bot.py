@@ -44,8 +44,13 @@ async def roll(dice : str):
 ### ?katsuragi - goddamn embeds ###
 ###################################
 
-@bot.command()
-async def katsuragi(ctx):
+@bot.command(pass_context=True)
+async def character(ctx):
+	if ctx.invoked_subcommand is None:
+		await ctx.send(':x: Please specify a character!')
+
+@character.command()
+async def misato(ctx):
 	embed=discord.Embed(title='Misato Katsuragi', description='"Sometimes you need a little wishful thinking just to keep on living."', color=0x400080)
 	embed.set_author(name='Misato Katsuragi',icon_url='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp-bIMBDrqyGVeaIVK2zDlY9Vjvc8GxXml56C7ASiOeIVTEqqubw')
 	embed.set_thumbnail(url='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp-bIMBDrqyGVeaIVK2zDlY9Vjvc8GxXml56C7ASiOeIVTEqqubw')
