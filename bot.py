@@ -75,10 +75,10 @@ async def shinji(ctx):
 
 @character.command()
 async def asuka(ctx):
-	if ctx.invoked_subcommand is 'rebuild' or ctx.invoked_subcommand is 'shikinami' or ctx.invoked_subcommand is 'langley shikinami':
-		embed=discord.Embed(title='Asuka Langley Shikinami', description='"Pretending to have fun with others will only wear me out."', color=13632027)
-		embed.set_author(name='Misato Katsuragi',icon_url='https://static.giantbomb.com/uploads/original/9/99864/2406901-_utw_thora__evangelion_2.22___you_can__not__advance__bd__1080p_x264_dts_es__8b521921_.mkv_snapshot_01.51.57__2013.01.03_08.02.12_.png')
-		embed.set_thumbnail(url='https://static.giantbomb.com/uploads/original/9/99864/2406901-_utw_thora__evangelion_2.22___you_can__not__advance__bd__1080p_x264_dts_es__8b521921_.mkv_snapshot_01.51.57__2013.01.03_08.02.12_.png')
+	if ctx.invoked_subcommand is 'rebuild' or 'shikinami' or 'langley shikinami' or 'shikinami langley':
+		embed=discord.Embed(title='Asuka Shikinami Langley', description='"Pretending to have fun with others will only wear me out."', color=13632027)
+		embed.set_author(name='Asuka Shikinami Langley',icon_url='http://s1.narvii.com/image/5fm7u2qd7j3jovegts53xidwfuxjgrwt_00.jpg')
+		embed.set_thumbnail(url='http://s1.narvii.com/image/5fm7u2qd7j3jovegts53xidwfuxjgrwt_00.jpg')
 		embed.add_field(name='Gender', value='Female', inline=True)
 		embed.add_field(name='Age', value=14, inline=True)
 		embed.add_field(name='Affiliation', value='NERV', inline=True)
@@ -87,8 +87,8 @@ async def asuka(ctx):
 		await ctx.send(embed=embed)
 	else:
 		embed=discord.Embed(title='Asuka Langley Soryu', description='"It is simply the duty of the elite to protect the ignorant masses."', color=13632027)
-		embed.set_author(name='Asuka Langley Soryu',icon_url='https://upload.wikimedia.org/wikipedia/en/thumb/2/2f/Asukka13.jpg/230px-Asukka13.jpg')
-		embed.set_thumbnail(url='https://upload.wikimedia.org/wikipedia/en/thumb/2/2f/Asukka13.jpg/230px-Asukka13.jpg')
+		embed.set_author(name='Asuka Langley Soryu',icon_url='https://vignette.wikia.nocookie.net/evangelion/images/a/a7/Asuka_smiling.png/')
+		embed.set_thumbnail(url='https://vignette.wikia.nocookie.net/evangelion/images/a/a7/Asuka_smiling.png/')
 		embed.add_field(name='Gender', value='Female', inline=True)
 		embed.add_field(name='Age', value=14, inline=True)
 		embed.add_field(name='Affiliation', value='NERV', inline=True)
