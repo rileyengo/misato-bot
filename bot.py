@@ -61,6 +61,7 @@ async def misato(ctx):
 	embed.set_footer(text=discord.Message.author)
 	await ctx.send(embed=embed)
 
+@character.command()
 async def shinji(ctx):
 	embed=discord.Embed(title='Shinji Ikari', description='"I thought this was supposed to be a world without pain."', color=1655179)
 	embed.set_author(name='Shinji Ikari',icon_url='http://images6.fanpop.com/image/quiz/1036000/1036067_1377237548381_500_375.jpg')
@@ -72,6 +73,7 @@ async def shinji(ctx):
 	embed.set_footer(text=discord.Message.author)
 	await ctx.send(embed=embed)
 
+@character.command()
 async def asuka(ctx):
 	if ctx.invoked_subcommand is 'rebuild':
 		embed=discord.Embed(title='Asuka Langley Shikinami', description='"Pretending to have fun with others will only wear me out."', color=13632027)
