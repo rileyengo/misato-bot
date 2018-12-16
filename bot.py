@@ -44,7 +44,7 @@ async def roll(dice : str):
 ### ?katsuragi - goddamn embeds ###
 ###################################
 
-@bot.group(pass_context=True, alias=['char', 'c'])
+@bot.group(pass_context=True, aliases=['char', 'c', 'cinfo'])
 async def character(ctx):
 	if ctx.invoked_subcommand is None:
 		await ctx.send(':x: Please specify a character!')
