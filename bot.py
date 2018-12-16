@@ -15,15 +15,6 @@ async def on_ready():
     print(bot.user.id)
     print('------')
     await bot.change_presence(activity=discord.Game(name='Evangelion 3.0+1.0'))
-
-############################
-### ?greet - hello there ###
-############################ 
-
-@bot.command()
-async def greet(ctx):
-    await ctx.send(":smiley: :wave: Hello, there!")
-
 ###########################
 ### ?dice - Roll a dice ###
 ###########################
@@ -46,6 +37,7 @@ async def roll(dice : str):
 
 @bot.group(pass_context=True, aliases=['char', 'c', 'cinfo'])
 async def character(ctx):
+	"""Stats on Evangelion characters."""
 	if ctx.invoked_subcommand is None:
 		await ctx.send(':x: Please specify a character!')
 
