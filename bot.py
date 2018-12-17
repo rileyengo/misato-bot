@@ -53,7 +53,7 @@ async def misato(ctx):
 	embed.set_footer(text=ctx.author, icon_url=ctx.author.avatar_url)
 	await ctx.send(embed=embed)
 
-@character.command(aliases=['ikari', 'shin', 'Shinji', 'Ikari'])
+@character.command(aliases=['ikari', 'Shinji', 'Ikari'])
 async def shinji(ctx):
 	embed=discord.Embed(title='Shinji Ikari', description='"I thought this was supposed to be a world without pain."', color=1655179)
 	embed.set_author(name='Shinji Ikari',icon_url='https://pbs.twimg.com/media/CqOGa3PWIAAc6LZ.jpg')
@@ -77,7 +77,7 @@ async def asuka(ctx):
 		embed.add_field(name='Position', value='Second Child', inline=True)
 		embed.set_footer(text=ctx.author, icon_url=ctx.author.avatar_url)
 		await ctx.send(embed=embed)
-	else:
+	elif ctx.invoked_subcommand is None:
 		embed=discord.Embed(title='Asuka Langley Soryu', description='"It is simply the duty of the elite to protect the ignorant masses."', color=13632027)
 		embed.set_author(name='Asuka Langley Soryu',icon_url='https://pbs.twimg.com/profile_images/801087906/Asuka_Twitterpic_400x400.jpg')
 		embed.set_thumbnail(url='https://vignette.wikia.nocookie.net/evangelion/images/a/a7/Asuka_smiling.png/')
