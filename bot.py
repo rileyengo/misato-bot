@@ -68,25 +68,22 @@ async def shinji(ctx):
 @character.command(aliases=['Asuka', 'Langley'])
 async def asuka(ctx):
 	if ctx.invoked_subcommand is 'rebuild' or 'shikinami' or 'langley shikinami' or 'shikinami langley':
-		embed=discord.Embed(title='Asuka Shikinami Langley', description='"Pretending to have fun with others will only wear me out."', color=13632027)
-		embed.set_author(name='Asuka Shikinami Langley',icon_url='https://pbs.twimg.com/profile_images/801087906/Asuka_Twitterpic_400x400.jpg')
-		embed.set_thumbnail(url='http://s1.narvii.com/image/5fm7u2qd7j3jovegts53xidwfuxjgrwt_00.jpg')
-		embed.add_field(name='Gender', value='Female', inline=True)
-		embed.add_field(name='Age', value=14, inline=True)
-		embed.add_field(name='Affiliation', value='NERV', inline=True)
-		embed.add_field(name='Position', value='Second Child', inline=True)
-		embed.set_footer(text=ctx.author, icon_url=ctx.author.avatar_url)
-		await ctx.send(embed=embed)
-	elif ctx.invoked_subcommand is None:
-		embed=discord.Embed(title='Asuka Langley Soryu', description='"It is simply the duty of the elite to protect the ignorant masses."', color=13632027)
-		embed.set_author(name='Asuka Langley Soryu',icon_url='https://pbs.twimg.com/profile_images/801087906/Asuka_Twitterpic_400x400.jpg')
-		embed.set_thumbnail(url='https://vignette.wikia.nocookie.net/evangelion/images/a/a7/Asuka_smiling.png/')
-		embed.add_field(name='Gender', value='Female', inline=True)
-		embed.add_field(name='Age', value=14, inline=True)
-		embed.add_field(name='Affiliation', value='NERV', inline=True)
-		embed.add_field(name='Position', value='Second Child', inline=True)
-		embed.set_footer(text=ctx.author, icon_url=ctx.author.avatar_url)
-		await ctx.send(embed=embed)
+		asukaname = 'Asuka Shikinami Langley'
+		picture = 'http://s1.narvii.com/image/5fm7u2qd7j3jovegts53xidwfuxjgrwt_00.jpg'
+		quote = '"Pretending to have fun with others will only wear me out."'
+	else:
+		asukaname = 'Asuka Langley Soryu'
+		picture = 'https://vignette.wikia.nocookie.net/evangelion/images/a/a7/Asuka_smiling.png/'
+		quote = '"It is simply the duty of the elite to protect the ignorant masses."'
+	embed=discord.Embed(title=asukaname, description=quote, color=13632027)
+	embed.set_author(name=asukaname,icon_url='https://pbs.twimg.com/profile_images/801087906/Asuka_Twitterpic_400x400.jpg')
+	embed.set_thumbnail(url=picture)
+	embed.add_field(name='Gender', value='Female', inline=True)
+	embed.add_field(name='Age', value=14, inline=True)
+	embed.add_field(name='Affiliation', value='NERV', inline=True)
+	embed.add_field(name='Position', value='Second Child', inline=True)
+	embed.set_footer(text=ctx.author, icon_url=ctx.author.avatar_url)
+	await ctx.send(embed=embed)
 
 @character.command(aliases=['ayanami', 'Rei', 'Ayanami'])
 async def rei(ctx):
@@ -97,6 +94,18 @@ async def rei(ctx):
 	embed.add_field(name='Age', value=14, inline=True)
 	embed.add_field(name='Affiliation', value='NERV', inline=True)
 	embed.add_field(name='Title', value='First Child', inline=True)
+	embed.set_footer(text=ctx.author, icon_url=ctx.author.avatar_url)
+	await ctx.send(embed=embed)
+
+@character.command(aliases=['nagisa', 'Kaworu', 'Nagisa'])
+async def kaworu(ctx):
+	embed=discord.Embed(title='Kaworu Nagisa', description='"Maybe I was born to meet you."', color=75600)
+	embed.set_author(name='Kaworu Nagisa',icon_url='https://66.media.tumblr.com/a6dbc3ec67b3664f6fbc001a37f096c5/tumblr_inline_p7ief68sXM1skorrd_540.png')
+	embed.set_thumbnail(url='https://66.media.tumblr.com/a6dbc3ec67b3664f6fbc001a37f096c5/tumblr_inline_p7ief68sXM1skorrd_540.png')
+	embed.add_field(name='Gender', value='Male', inline=True)
+	embed.add_field(name='Age', value=15, inline=True)
+	embed.add_field(name='Affiliation', value='SEELE', inline=True)
+	embed.add_field(name='Title', value='Fifth Child, Seventeenth Angel', inline=True)
 	embed.set_footer(text=ctx.author, icon_url=ctx.author.avatar_url)
 	await ctx.send(embed=embed)
 
