@@ -67,7 +67,7 @@ async def shinji(ctx):
 
 @character.command(aliases=['Asuka', 'Langley'])
 async def asuka(ctx):
-	if ctx.invoked_subcommand is 'rebuild' or 'shikinami' or 'langley shikinami' or 'shikinami langley' or 'Shikinami' or 'Shikinami Langley' or 'Langley Shikinami':
+	if ctx.invoked_subcommand is 'rebuild' or 'shikinami' or 'langley shikinami' or 'shikinami langley':
 		embed=discord.Embed(title='Asuka Shikinami Langley', description='"Pretending to have fun with others will only wear me out."', color=13632027)
 		embed.set_author(name='Asuka Shikinami Langley',icon_url='https://pbs.twimg.com/profile_images/801087906/Asuka_Twitterpic_400x400.jpg')
 		embed.set_thumbnail(url='http://s1.narvii.com/image/5fm7u2qd7j3jovegts53xidwfuxjgrwt_00.jpg')
@@ -87,6 +87,7 @@ async def asuka(ctx):
 		embed.add_field(name='Position', value='Second Child', inline=True)
 		embed.set_footer(text=ctx.author, icon_url=ctx.author.avatar_url)
 		await ctx.send(embed=embed)
+
 @character.command(aliases=['ayanami', 'Rei', 'Ayanami'])
 async def rei(ctx):
 	embed=discord.Embed(title='Rei Ayanami', description='"Those who hate themselves, cannot love or trust others."', color=7250141)
