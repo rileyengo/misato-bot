@@ -22,7 +22,7 @@ async def on_ready():
 ### LOAD AND UNLOAD EXTENSIONS ###
 ##################################
 if __name__ == '__main__':
-    for extension in initial_extensions:
+    for extension in startup_extensions:
         try:
             bot.load_extension(extension)
         except Exception as e:
