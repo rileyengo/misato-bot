@@ -21,6 +21,13 @@ async def on_ready():
 ##################################
 ### LOAD AND UNLOAD EXTENSIONS ###
 ##################################
+if __name__ == '__main__':
+    for extension in initial_extensions:
+        try:
+            bot.load_extension(extension)
+        except Exception as e:
+            print(f'Failed to load extension {extension}.', file=sys.stderr)
+            traceback.print_exc()
 @bot.command()
 async def load(extension_name : str):
     """Loads an extension."""
@@ -52,14 +59,5 @@ async def roll(dice : str):
 
     result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
     await bot.send(':dice: ' + result)
-   
-# extensions
-if __name__ == "__main__":
-    for extension in startup_extensions:
-        try:
-            bot.load_extension(extension)
-        except Exception as e:
-            exc = '{}: {}'.format(type(e).__name__, e)
-            print('Failed to load extension {}\n{}'.format(extension, exc))
-
+  
 bot.run(TOKEN)
