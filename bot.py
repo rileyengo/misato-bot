@@ -17,24 +17,24 @@ async def on_ready():
     print('------')
     await bot.change_presence(activity=discord.Game(name='Evangelion 3.0+1.0'))
 
-###########################
+##################################
 ### LOAD AND UNLOAD EXTENSIONS ###
-###########################
+##################################
 @bot.command()
-async def load(ctx, extension_name : str):
+async def load(extension_name : str):
     """Loads an extension."""
     try:
-        ctx.load_extension(extension_name)
+        bot.load_extension(extension_name)
     except (AttributeError, ImportError) as e:
-        await ctx.say("```py\n{}: {}\n```".format(type(e).__name__, str(e)))
+        await bot.say("```py\n{}: {}\n```".format(type(e).__name__, str(e)))
         return
-    await ctx.say("{} loaded.".format(extension_name))
+    await bot.say("{} loaded.".format(extension_name))
 
 @bot.command()
-async def unload(ctx, extension_name : str):
+async def unload(extension_name : str):
     """Unloads an extension."""
-    ctx.unload_extension(extension_name)
-    await ctx.say("{} unloaded.".format(extension_name))
+    bot.unload_extension(extension_name)
+    await bot.say("{} unloaded.".format(extension_name))
 
 ###########################
 ### ?dice - Roll a dice ###
@@ -46,7 +46,7 @@ async def roll(dice : str):
     try:
         rolls, limit = map(int, dice.split('d'))
     except Exception:
-        await bot.send('Format has to be in NdN!')
+        await bot.say('Format has to be in NdN!')
         return
 
     result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
