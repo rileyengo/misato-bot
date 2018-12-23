@@ -1,3 +1,6 @@
+import discord
+from discord.ext import commands
+
 @bot.group(pass_context=True, aliases=['char', 'c', 'cinfo'])
 async def character(ctx):
 	"""Stats on Evangelion characters."""
