@@ -1,12 +1,13 @@
 import discord
 import os
 import datetime
+import sys, traceback
 from discord.ext import commands
 from os import environ
 
 bot = commands.Bot(command_prefix='?')
 TOKEN = os.environ['TOKEN']
-startup_extensions = ["characters"]
+startup_extensions = ["cogs.characters"]
 client = discord.Client()
 
 @bot.event
@@ -51,6 +52,7 @@ async def roll(dice : str):
 
     result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
     await bot.send(':dice: ' + result)
+   
 # extensions
 if __name__ == "__main__":
     for extension in startup_extensions:
