@@ -3,13 +3,13 @@ from discord.ext import commands
 class CharactersCog:
 	def __init__(self, bot):
 		self.bot = bot
-	@bot.group(pass_context=True, aliases=['char', 'c', 'cinfo'])
+	@bot.group(name='character', pass_context=True, aliases=['char', 'c', 'cinfo'])
 	async def character(ctx):
 	"""Stats on Evangelion characters."""
 		if ctx.invoked_subcommand is None:
 			await ctx.send(':x: Please specify a character!')
 
-	@character.command(aliases=['katsuragi', 'Misato'])
+	@character.command(name='misato', aliases=['katsuragi', 'Misato'])
 	async def misato(ctx):
 		embed=discord.Embed(title='Misato Katsuragi', description='"Sometimes you need a little wishful thinking just to keep on living."', color=0x400080)
 		embed.set_author(name='Misato Katsuragi',icon_url='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp-bIMBDrqyGVeaIVK2zDlY9Vjvc8GxXml56C7ASiOeIVTEqqubw')
@@ -21,7 +21,7 @@ class CharactersCog:
 		embed.set_footer(text=ctx.author, icon_url=ctx.author.avatar_url)
 		await ctx.send(embed=embed)
 
-	@character.command(aliases=['ikari', 'Shinji', 'Ikari'])
+	@character.command(name='shinji', aliases=['ikari', 'Shinji', 'Ikari'])
 	async def shinji(ctx):
 		embed=discord.Embed(title='Shinji Ikari', description='"I thought this was supposed to be a world without pain."', color=1655179)
 		embed.set_author(name='Shinji Ikari',icon_url='https://pbs.twimg.com/media/CqOGa3PWIAAc6LZ.jpg')
@@ -33,7 +33,7 @@ class CharactersCog:
 		embed.set_footer(text=ctx.author, icon_url=ctx.author.avatar_url)
 		await ctx.send(embed=embed)
 
-	@character.command(aliases=['Asuka', 'Langley'])
+	@character.command(name='asuka', aliases=['Asuka', 'Langley'])
 	async def asuka(ctx):
 		if ctx.invoked_subcommand is 'rebuild' or 'shikinami' or 'langley shikinami' or 'shikinami langley':
 			asukaname = 'Asuka Shikinami Langley'
@@ -53,7 +53,7 @@ class CharactersCog:
 		embed.set_footer(text=ctx.author, icon_url=ctx.author.avatar_url)
 		await ctx.send(embed=embed)
 
-	@character.command(aliases=['ayanami', 'Rei', 'Ayanami'])
+	@character.command(name='rei', aliases=['ayanami', 'Rei', 'Ayanami'])
 	async def rei(ctx):
 		embed=discord.Embed(title='Rei Ayanami', description='"Those who hate themselves, cannot love or trust others."', color=7250141)
 		embed.set_author(name='Rei Ayanami',icon_url='https://66.media.tumblr.com/00c2934a0314d1b7a84596e2fa556bed/tumblr_oju52h8S441vy2tgqo4_400.png')
@@ -65,7 +65,7 @@ class CharactersCog:
 		embed.set_footer(text=ctx.author, icon_url=ctx.author.avatar_url)
 		await ctx.send(embed=embed)
 
-	@character.command(aliases=['nagisa', 'Kaworu', 'Nagisa'])
+	@character.command(name='kaworu', aliases=['nagisa', 'Kaworu', 'Nagisa'])
 	async def kaworu(ctx):
 		embed=discord.Embed(title='Kaworu Nagisa', description='"Maybe I was born to meet you."', color=75600)
 		embed.set_author(name='Kaworu Nagisa',icon_url='https://66.media.tumblr.com/a6dbc3ec67b3664f6fbc001a37f096c5/tumblr_inline_p7ief68sXM1skorrd_540.png')
