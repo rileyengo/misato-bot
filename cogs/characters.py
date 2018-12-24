@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+import datetime
 
 class CharactersCog:
 	def __init__(self, bot):
@@ -30,7 +31,7 @@ class CharactersCog:
 		embed.add_field(name='Age', value=14, inline=True)
 		embed.add_field(name='Affiliation', value='NERV', inline=True)
 		embed.add_field(name='Title', value='Third Child', inline=True)
-		embed.set_footer(text=ctx.author, icon_url=ctx.author.avatar_url)
+		embed.set_footer(text=ctx.author, icon_url=ctx.author.avatar_url, timestamp=datetime.datetime.now())
 		await ctx.send(embed=embed)
 
 	@character.command(name='asuka', aliases=['Asuka', 'Langley'])
