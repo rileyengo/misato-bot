@@ -31,7 +31,7 @@ class CharactersCog:
 		embed.add_field(name='Age', value=14, inline=True)
 		embed.add_field(name='Affiliation', value='NERV', inline=True)
 		embed.add_field(name='Title', value='Third Child', inline=True)
-		embed.set_footer(text=ctx.author, icon_url=ctx.author.avatar_url, timestamp=datetime.now())
+		embed.set_footer(text=ctx.author, icon_url=ctx.author.avatar_url)
 		await ctx.send(embed=embed)
 
 	@character.command(name='asuka', aliases=['Asuka', 'Langley'])
