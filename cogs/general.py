@@ -3,7 +3,7 @@ from discord.ext import commands
 class GeneralCog:
 	def __init__(self, bot):
 		self.bot = bot
-	@bot.command()
+	@commands.command()
 	async def load(extension_name : str):
 		"""Loads an extension."""
 		try:
@@ -13,7 +13,7 @@ class GeneralCog:
 			return
 		await bot.say("{} loaded.".format(extension_name))
 
-	@bot.command()
+	@commands.command()
 	async def unload(extension_name : str):
 		"""Unloads an extension."""
 		bot.unload_extension(extension_name)
@@ -23,7 +23,7 @@ class GeneralCog:
 	### ?dice - Roll a dice ###
 	###########################
 
-	@bot.command()
+	@commands.command()
 	async def roll(dice : str):
 		"""Rolls a dice in NdN format."""
 		try:
@@ -34,6 +34,13 @@ class GeneralCog:
 
 		result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
 		await bot.send(':dice: ' + result)
+		
+	############################
+	### ?greet - testing 123 ###
+	############################
+	@commands.command()
+	async def greet(dice : str):
+		await bot.send('you win yay')
 
 def setup(bot):
     bot.add_cog(GeneralCog(bot))
