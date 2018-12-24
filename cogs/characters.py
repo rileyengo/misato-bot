@@ -1,7 +1,7 @@
 from discord.ext import commands
 
 class CharactersCog:
-	def __init__(self, bot, ctx):
+	def __init__(self, bot):
 		self.bot = bot
 	@commands.group(name='character', pass_context=True, aliases=['char', 'c', 'cinfo'])
 	async def character(ctx):
