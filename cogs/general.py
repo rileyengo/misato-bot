@@ -30,18 +30,18 @@ class GeneralCog:
 		try:
 			rolls, limit = map(int, dice.split('d'))
 		except Exception:
-			await ctx.say('Format has to be in NdN!')
+			await bot.say('Format has to be in NdN!')
 			return
 
 		result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
-		await ctx.say(result)
+		await bot.say(result)
 		
 	############################
 	### ?greet - testing 123 ###
 	############################
 	@commands.command()
 	async def greet(self, ctx):
-		await ctx.say('you win yay')
+		await bot.say('you win yay')
 
 def setup(bot):
     bot.add_cog(GeneralCog(bot))
