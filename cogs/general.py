@@ -24,23 +24,23 @@ class GeneralCog:
 	###########################
 
 	@commands.command()
-	async def roll(dice : str):
+	async def roll(self, ctx, dice : str):
 		"""Rolls a dice in NdN format."""
 		try:
 			rolls, limit = map(int, dice.split('d'))
 		except Exception:
-			await bot.say('Format has to be in NdN!')
+			await ctx.say('Format has to be in NdN!')
 			return
 
 		result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
-		await bot.send(':dice: ' + result)
+		await ctx.say(result)
 		
 	############################
 	### ?greet - testing 123 ###
 	############################
 	@commands.command()
-	async def greet(dice : str):
-		await bot.send('you win yay')
+	async def greet(self, ctx):
+		await ctx.say('you win yay')
 
 def setup(bot):
     bot.add_cog(GeneralCog(bot))
