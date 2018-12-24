@@ -5,7 +5,6 @@ class CharactersCog:
 		self.bot = bot
 	@commands.group(name='character', pass_context=True, aliases=['char', 'c', 'cinfo'])
 	async def character(ctx):
-	"""Stats on Evangelion characters."""
 		if ctx.invoked_subcommand is None:
 			await ctx.send(':x: Please specify a character!')
 
