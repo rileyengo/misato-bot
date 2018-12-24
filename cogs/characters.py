@@ -3,7 +3,7 @@ from discord.ext import commands
 class CharactersCog:
 	def __init__(self, bot):
 		self.bot = bot
-	@bot.group(name='character', pass_context=True, aliases=['char', 'c', 'cinfo'])
+	@commands.group(name='character', pass_context=True, aliases=['char', 'c', 'cinfo'])
 	async def character(ctx):
 	"""Stats on Evangelion characters."""
 		if ctx.invoked_subcommand is None:
