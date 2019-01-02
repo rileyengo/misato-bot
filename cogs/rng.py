@@ -15,12 +15,12 @@ class RNG():
             return
 
         result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
-        await self.bot.say(result)
+        await self.bot.send(result)
 
     @commands.command(description='For when you wanna settle the score some other way')
     async def choose(self, *choices : str):
         """Chooses between multiple choices."""
-        await self.bot.say(random.choice(choices))
+        await self.bot.send(random.choice(choices))
 
 
 def setup(bot):
