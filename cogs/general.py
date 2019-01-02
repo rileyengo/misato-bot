@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-class GeneralCog:
+class General:
 	def __init__(self, bot):
 		self.bot = bot
 	@commands.command()
@@ -44,4 +44,4 @@ class GeneralCog:
 		await bot.say('you win yay')
 
 def setup(bot):
-    bot.add_cog(GeneralCog(bot))
+    bot.add_cog(General(bot))
