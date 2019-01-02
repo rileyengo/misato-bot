@@ -7,7 +7,7 @@ from os import environ
 
 bot = commands.Bot(command_prefix='?')
 TOKEN = os.environ['TOKEN']
-startup_extensions = ['cogs.characters', 'cogs.general']
+startup_extensions = ['cogs.characters', 'cogs.general', 'cogs.members']
 client = discord.Client()
 
 @bot.event
