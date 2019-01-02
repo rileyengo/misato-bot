@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import datetime
 
-class CharactersCog:
+class Characters:
 	def __init__(self, bot):
 		self.bot = bot
 	@commands.group(name='character', pass_context=True, aliases=['char', 'c', 'cinfo'])
@@ -91,4 +91,4 @@ class CharactersCog:
 		await ctx.send(embed=embed)
 
 def setup(bot):
-    bot.add_cog(CharactersCog(bot))
+    bot.add_cog(Characters(bot))
