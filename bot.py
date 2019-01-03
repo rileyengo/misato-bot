@@ -5,8 +5,7 @@ import sys, traceback
 from discord.ext import commands
 from os import environ
 
-PREFIX = '?'
-bot = commands.Bot(command_prefix=PREFIX)
+bot = commands.Bot(command_prefix='?')
 TOKEN = os.environ['TOKEN']
 startup_extensions = ['cogs.characters', 
                       'cogs.general', 
