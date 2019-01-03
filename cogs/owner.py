@@ -9,7 +9,7 @@ class Owner:
 	@commands.is_owner()
 		async def owner(self, ctx):
 		"""Only the owner can use this. Shh."""
-			await bot.say('You are an official affiliated with SEELE.')
+			await ctx.send('You are an official affiliated with SEELE.')
 
 def setup(bot):
     bot.add_cog(Owner(bot))
