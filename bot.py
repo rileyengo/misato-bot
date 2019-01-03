@@ -5,12 +5,14 @@ import sys, traceback
 from discord.ext import commands
 from os import environ
 
-bot = commands.Bot(command_prefix='>')
+PREFIX = '?'
+bot = commands.Bot(command_prefix=PREFIX)
 TOKEN = os.environ['TOKEN']
 startup_extensions = ['cogs.characters', 
                       'cogs.general', 
                       'cogs.members', 
-                      'cogs.rng'
+                      'cogs.rng',
+                      'cogs.owner'
                      ]
 client = discord.Client()
 
@@ -20,7 +22,7 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('------')
-    await bot.change_presence(activity=discord.Game(name='Evangelion 3.0+1.0 | >help'))
+    await bot.change_presence(activity=discord.Game(name='Evangelion 3.0+1.0 | ?help'))
 
 ##################################
 ### LOAD AND UNLOAD EXTENSIONS ###
