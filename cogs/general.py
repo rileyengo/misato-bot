@@ -4,7 +4,8 @@ from discord.ext import commands
 class General:
 	def __init__(self, bot):
 		self.bot = bot
-	@commands.command()
+	@commands.command(name='load')
+	@commands.is_owner()
 	async def load(extension_name : str):
 		"""Loads an extension."""
 		try:
@@ -14,18 +15,22 @@ class General:
 			return
 		await bot.say("{} loaded.".format(extension_name))
 
-	@commands.command()
+	@commands.command(name='unload')
+	@commands.is_owner()
 	async def unload(extension_name : str):
 		"""Unloads an extension."""
 		bot.unload_extension(extension_name)
 		await bot.say("{} unloaded.".format(extension_name))
 
-	############################
-	### ?greet - testing 123 ###
-	############################
-	@commands.command()
-	async def greet(self, ctx):
-		await bot.say('you win yay')
+	@commands.command(name='ping')
+	async def ping(self, ctx):
+		"""Ping!"""
+		await bot.say('Pong!')
+		
+	@commands.command(name='repeat')
+		async def repeat(ctx, *, arg):
+			"""Repeats what you say."""
+   			await ctx.send(arg)
 
 def setup(bot):
     bot.add_cog(General(bot))
