@@ -10,8 +10,7 @@ TOKEN = os.environ['TOKEN']
 startup_extensions = ['cogs.characters', 
                       'cogs.general', 
                       'cogs.members', 
-                      'cogs.rng',
-                      'cogs.owner'
+                      'cogs.rng'
                      ]
 client = discord.Client()
 
