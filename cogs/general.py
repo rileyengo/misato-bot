@@ -28,9 +28,9 @@ class General:
 		await bot.say('Pong!')
 		
 	@commands.command(name='repeat')
-		async def repeat(ctx, *, arg):
-			"""Repeats what you say."""
-   			await ctx.send(arg)
+	async def repeat(ctx, *, arg):
+		"""Repeats what you say."""
+   		await ctx.send(arg)
 
 def setup(bot):
     bot.add_cog(General(bot))
