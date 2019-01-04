@@ -15,7 +15,7 @@ class RNG():
             return
 
         result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
-        await ctx.send(result)
+        await ctx.send(':game_die: You rolled a {0.result}!'.format(result))
 
     @commands.command(description='For when you wanna settle the score some other way')
     async def choose(self, ctx, *choices : str):
