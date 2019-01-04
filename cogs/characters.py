@@ -80,7 +80,7 @@ class Characters:
 
 	@character.command(name='gendo', aliases=['Gendo', 'gendo ikari', 'Gendo Ikari'])
 	async def gendo(self, ctx):
-		embed=discord.Embed(title='Gendo Ikari', description='"Maybe I was born to meet you."', color=75600)
+		embed=discord.Embed(title='Gendo Ikari', description='"Mankind\'s greatest fear is Mankind itself."', color=75600)
 		embed.set_author(name='Gendo Ikari',icon_url='https://pbs.twimg.com/profile_images/779243168130736128/_Q24gTBh_400x400.jpg')
 		embed.set_thumbnail(url='https://vignette.wikia.nocookie.net/evangelion/images/8/8c/Weaving_a_Story.png')
 		embed.add_field(name='Gender', value='Male', inline=True)
