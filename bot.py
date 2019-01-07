@@ -7,7 +7,7 @@ from os import environ
 
 bot = commands.Bot(command_prefix='?')
 TOKEN = os.environ['TOKEN']
-startup_extensions = ['cogs.characters', 
+startup_extensions = ['cogs.evangelion', 
                       'cogs.general', 
                       'cogs.members', 
                       'cogs.rng'
