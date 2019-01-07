@@ -119,4 +119,4 @@ class Evangelion:
 		await ctx.send(embed=embed)
 
 def setup(bot):
-    bot.add_cog(Evangelion(bot), hidden=True)
+    bot.add_cog(Evangelion(bot)) # find some way to hide this from ?help
