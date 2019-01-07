@@ -2,11 +2,17 @@ import discord
 from discord.ext import commands
 import datetime
 
-class Characters:
+class Evangelion:
 	def __init__(self, bot):
 		self.bot = bot
+	
+	#######################
+	###### CHARACTERS #####
+	#######################
+
 	@commands.group(name='character', pass_context=True, aliases=['char', 'c', 'cinfo'])
 	async def character(self, ctx):
+		"""Stats on Evangelion characters."""
 		if ctx.invoked_subcommand is None:
 			await ctx.send(':x: Please specify a character!')
 
@@ -89,6 +95,28 @@ class Characters:
 		embed.add_field(name='Title', value='Commander', inline=True)
 		embed.set_footer(text=ctx.author, icon_url=ctx.author.avatar_url)
 		await ctx.send(embed=embed)
+	
+	########################
+	###### EVANGELIONS #####
+	########################
+	
+	@commands.group(name='evangelion', pass_context=True, aliases=['mech', 'mecha', 'eva', 'robot', 'unit'])
+	async def evangelion(self, ctx):
+		"""Stats on Evangelion mechas."""
+		if ctx.invoked_subcommand is None:
+			await ctx.send(':x: Please specify a unit!')
+			
+	@evangelion.command(name='01', aliases=['unit 01', 'unit-01', 'shinji']) # Not quite finished yet lol
+	async def unit1(self, ctx):
+		embed=discord.Embed(title='Unit-01', description='', color=75600)
+		embed.set_author(name='Evangelion Unit-01',icon_url='https://pbs.twimg.com/profile_images/779243168130736128/_Q24gTBh_400x400.jpg')
+		embed.set_thumbnail(url='https://vignette.wikia.nocookie.net/evangelion/images/8/8c/Weaving_a_Story.png')
+		embed.add_field(name='Color', value='Purple', inline=True)
+		embed.add_field(name='Pilot', value='Shinji Ikari', inline=True)
+		embed.add_field(name='Location', value='Tokyo', inline=True)
+		embed.add_field(name='Title', value='Commander', inline=True)
+		embed.set_footer(text=ctx.author, icon_url=ctx.author.avatar_url)
+		await ctx.send(embed=embed)
 
 def setup(bot):
-    bot.add_cog(Characters(bot))
+    bot.add_cog(Evangelion(bot), hidden=True)
