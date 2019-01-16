@@ -28,7 +28,7 @@ class General:
 		await ctx.send('Pong!')
 		
 	@commands.command(name='repeat')
-	async def repeat(ctx, *, arg):
+	async def repeat(ctx, arg):
 		"""Repeats what you say."""
 		await ctx.send(arg)
 
