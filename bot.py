@@ -20,7 +20,7 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('------')
-    await bot.change_presence(activity=discord.Game(name='Evangelion 3.0+1.0 | ?help'))
+    await bot.change_presence(activity=discord.Game(name='𝙛𝙡𝙮 𝙢𝙚 𝙩𝙤 𝙩𝙝𝙚 𝙢𝙤𝙤𝙣'))
 
 ##################################
 ### LOAD AND UNLOAD EXTENSIONS ###
