@@ -117,16 +117,16 @@ class Evangelion:
 		embed.set_footer(text=ctx.author, icon_url=ctx.author.avatar_url)
 		await ctx.send(embed=embed)
 
-	@evangelion.command(name='02', aliases=['unit 02', 'unit-02', 'asuka']) # Not quite finished yet lol
-	async def unit1(self, ctx):
-		embed=discord.Embed(title='Unit-02', description='', color=75600)
-		embed.set_author(name='Evangelion Unit-02',icon_url='https://pbs.twimg.com/profile_images/779243168130736128/_Q24gTBh_400x400.jpg')
-		embed.set_thumbnail(url='https://vignette.wikia.nocookie.net/evangelion/images/8/8c/Weaving_a_Story.png')
-		embed.add_field(name='Color', value='Red', inline=True)
-		embed.add_field(name='Pilot', value='Asuka Soryu Langley\u200BAsuka Shikinami Langley', inline=True)
-		embed.add_field(name='Location', value='Tokyo', inline=True)
-		embed.set_footer(text=ctx.author, icon_url=ctx.author.avatar_url)
-		await ctx.send(embed=embed)
+	#@evangelion.command(name='02', aliases=['unit 02', 'unit-02', 'asuka']) # Not quite finished yet lol
+	#async def unit1(self, ctx):
+		#embed=discord.Embed(title='Unit-02', description='', color=75600)
+		#embed.set_author(name='Evangelion Unit-02',icon_url='https://pbs.twimg.com/profile_images/779243168130736128/_Q24gTBh_400x400.jpg')
+		#embed.set_thumbnail(url='https://vignette.wikia.nocookie.net/evangelion/images/8/8c/Weaving_a_Story.png')
+		#embed.add_field(name='Color', value='Red', inline=True)
+		#embed.add_field(name='Pilot', value='Asuka Soryu Langley\u200BAsuka Shikinami Langley', inline=True)
+		#embed.add_field(name='Location', value='Tokyo', inline=True)
+		#embed.set_footer(text=ctx.author, icon_url=ctx.author.avatar_url)
+		#await ctx.send(embed=embed)
 
 def setup(bot):
     bot.add_cog(Evangelion(bot)) # find some way to hide this from ?help
