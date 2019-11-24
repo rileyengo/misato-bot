@@ -119,7 +119,7 @@ class Evangelion:
 
 	@evangelion.command(name='02', aliases=['unit 02', 'unit-02', 'asuka']) # Not quite finished yet lol
 	async def unit1(self, ctx):
-		embed=discord.Embed(title='Unit-01', description='', color=75600)
+		embed=discord.Embed(title='Unit-02', description='', color=75600)
 		embed.set_author(name='Evangelion Unit-02',icon_url='https://pbs.twimg.com/profile_images/779243168130736128/_Q24gTBh_400x400.jpg')
 		embed.set_thumbnail(url='https://vignette.wikia.nocookie.net/evangelion/images/8/8c/Weaving_a_Story.png')
 		embed.add_field(name='Color', value='Red', inline=True)
