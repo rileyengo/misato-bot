@@ -32,4 +32,4 @@ if __name__ == '__main__':
         except (discord.ClientException, ModuleNotFoundError):
             print(f'Failed to load extension {extension}.', file=sys.stderr)
             traceback.print_exc()
-bot.run(TOKEN, bot=True, reconnect=True)
+bot.run(TOKEN)
