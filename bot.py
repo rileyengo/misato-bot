@@ -6,7 +6,7 @@ from discord.ext import commands
 from os import environ
 
 bot = commands.Bot(command_prefix='?')
-TOKEN = os.environ['TOKEN']
+TOKEN = os.getenv['TOKEN']
 startup_extensions = ['cogs.evangelion', 
                       'cogs.general', 
                       'cogs.members', 
