@@ -3,10 +3,9 @@ import os
 import datetime
 import sys, traceback
 from discord.ext import commands
-from os import environ
 
-bot = commands.Bot(command_prefix='?')
-TOKEN = os.getenv['TOKEN']
+bot = commands.Bot(command_prefix="?")
+TOKEN = os.getenv("TOKEN")
 startup_extensions = ['cogs.evangelion', 
                       'cogs.general', 
                       'cogs.members', 
