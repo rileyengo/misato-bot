@@ -13,7 +13,7 @@ class Evangelion:
 	@commands.group(name='character', pass_context=True, aliases=['char', 'c', 'cinfo'])
 	async def character(self, ctx):
 		"""Stats on Evangelion characters."""
-		if ctx.invoked_subcommand is None:
+		if ctx.invoked_subcommand == None:
 			await ctx.send(':x: Please specify a character!')
 
 	@character.command(name='misato', aliases=['katsuragi', 'Misato'])
@@ -42,7 +42,7 @@ class Evangelion:
 
 	@character.command(name='asuka', aliases=['Asuka', 'Langley'])
 	async def asuka(self, ctx):
-		if ctx.invoked_subcommand is 'rebuild' or 'shikinami' or 'langley shikinami' or 'shikinami langley':
+		if ctx.invoked_subcommand == 'rebuild' or 'shikinami' or 'langley shikinami' or 'shikinami langley':
 			asukaname = 'Asuka Shikinami Langley'
 			picture = 'http://s1.narvii.com/image/5fm7u2qd7j3jovegts53xidwfuxjgrwt_00.jpg'
 			quote = '"Pretending to have fun with others will only wear me out."'
@@ -103,7 +103,7 @@ class Evangelion:
 	@commands.group(name='evangelion', pass_context=True, aliases=['mech', 'mecha', 'eva', 'robot', 'unit'])
 	async def evangelion(self, ctx):
 		"""Stats on Evangelion mechas."""
-		if ctx.invoked_subcommand is None:
+		if ctx.invoked_subcommand == None:
 			await ctx.send(':x: Please specify a unit!')
 			
 	@evangelion.command(name='01', aliases=['unit 01', 'unit-01', 'shinji']) # Not quite finished yet lol
