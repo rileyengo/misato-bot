@@ -2,7 +2,7 @@ import time
 import json
 import discord
 import traceback
-import timeago as timesince
+# import timeago as timesince
 import datetime
 import calendar
 
@@ -30,7 +30,7 @@ def timetext(name):
     return f"{name}_{int(time.time())}.txt"
 
 
-def date(target, clock: bool = True, seconds: bool = False, ago: bool = False, only_ago: bool = False, raw: bool = False):
+#def date(target, clock: bool = True, seconds: bool = False, ago: bool = False, only_ago: bool = False, raw: bool = False):
     if isinstance(target, int) or isinstance(target, float):
         target = datetime.datetime.utcfromtimestamp(target)
 
