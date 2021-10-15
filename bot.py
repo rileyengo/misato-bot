@@ -26,9 +26,6 @@ async def on_ready():
 ##################################
 if __name__ == '__main__':
     for extension in startup_extensions:
-        try:
-            bot.load_extension(extension)
-        except (discord.ClientException, ModuleNotFoundError):
-            print(f'Failed to load extension {extension}.', file=sys.stderr)
-            traceback.print_exc()
-bot.run(TOKEN)
+        bot.load_extension(extension)
+
+bot.run(TOKEN, bot=True, reconnect=True)
