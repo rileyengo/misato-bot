@@ -15,13 +15,13 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('------')
-    await bot.change_presence(activity=discord.Game(name='get in we\'re going to therapy'))
+    await bot.change_presence(activity=discord.Game(name='if you\'re reading this then i am merely a shell of my former existence with no cogs 🤩'))
 
 ##################################
 ### LOAD AND UNLOAD EXTENSIONS ###
 ##################################
-if __name__ == '__main__':
-    for extension in startup_extensions:
-        bot.load_extension(extension)
+# if __name__ == '__main__':
+#    for extension in startup_extensions:
+#        bot.load_extension(extension)
 
 bot.run(TOKEN, bot=True, reconnect=True)
