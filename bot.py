@@ -6,11 +6,7 @@ from discord.ext import commands
 
 bot = commands.Bot(command_prefix="?")
 TOKEN = os.getenv("TOKEN")
-startup_extensions = ['cogs.evangelion', 
-                      'cogs.general', 
-                      'cogs.members', 
-                      'cogs.rng'
-                     ]
+startup_extensions = ['general']
 client = discord.Client()
 
 @bot.event
