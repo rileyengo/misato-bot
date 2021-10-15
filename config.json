@@ -1,0 +1,13 @@
+{
+    "token": "",
+    "join_message": "welcome to nerv 🤖",
+    "owners": [
+        898438164841132032
+    ],
+    "prefix": [
+      "?"
+    ],
+    "activity": "angel attack",
+    "activity_type": "playing|watching|listening|competing",
+    "status_type": "online|idle|dnd"
+  }
