@@ -6,7 +6,7 @@ from discord.ext import commands
 
 bot = commands.Bot(command_prefix="?")
 TOKEN = os.getenv("TOKEN")
-initial_extensions = ['cogs.admin']
+initial_extensions = ['modules.admin.cog']
 client = discord.Client()
 
 @bot.event
