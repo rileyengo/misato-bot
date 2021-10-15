@@ -24,4 +24,4 @@ async def on_ready():
 #    for extension in startup_extensions:
 #        bot.load_extension(extension)
 
-bot.run(TOKEN, bot=True, reconnect=True)
+bot.run(TOKEN)
