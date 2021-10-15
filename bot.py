@@ -6,7 +6,7 @@ from discord.ext import commands
 
 bot = commands.Bot(command_prefix="?")
 TOKEN = os.getenv("TOKEN")
-startup_extensions = ['cogs.general']
+initial_extensions = ['cogs.owner', 'cogs.members']
 client = discord.Client()
 
 @bot.event
@@ -15,13 +15,13 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('------')
-    await bot.change_presence(activity=discord.Game(name='if you\'re reading this then i am merely a shell of my former existence with no cogs 🤩'))
+    await bot.change_presence(activity=discord.Game(name='get in loser we\'re going to therapy'))
 
 ##################################
 ### LOAD AND UNLOAD EXTENSIONS ###
 ##################################
-# if __name__ == '__main__':
-#    for extension in startup_extensions:
-#        bot.load_extension(extension)
+if __name__ == '__main__':
+    for extension in initial_extensions:
+        bot.load_extension(extension)
 
 bot.run(TOKEN)
