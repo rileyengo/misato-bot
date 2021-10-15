@@ -1,19 +1,21 @@
 import discord
 from discord.ext import commands
 
-class General():
+
+class General(commands.Cog):
 	def __init__(self, bot):
 		self.bot = bot
+
 	@commands.command(name='load')
 	@commands.is_owner()
-	async def load(ctx, extension_name : str):
+	async def cog_load(self, ctx, *, cog: str):
 		"""Loads an extension."""
 		try:
-			bot.load_extension(extension_name)
+			bot.load_extension(cog)
 		except (AttributeError, ImportError) as e:
 			await ctx.send("```py\n{}: {}\n```".format(type(e).__name__, str(e)))
 			return
-		await bot.say("{} loaded.".format(extension_name))
+		await bot.say("{} loaded.".format(cog))
 
 	@commands.command(name='unload')
 	@commands.is_owner()
