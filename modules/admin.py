@@ -30,15 +30,15 @@ class Admin(commands.Cog):
     async def amiadmin(self, ctx):
         """ Are you an admin? """
         if ctx.author.id in self.config["owners"]:
-            return await ctx.send(f"Yes **{ctx.author.name}** you are an admin! ✅")
+            return await ctx.send(f"🔰 yes **{ctx.author.name}** you are an admin!!")
 
         # Please do not remove this part.
         # I would love to be credited as the original creator of the source code.
         #   -- AlexFlipnote
         if ctx.author.id == 86477779717066752:
-            return await ctx.send(f"Well kinda **{ctx.author.name}**.. you still own the source code")
+            return await ctx.send(f"well kinda **{ctx.author.name}**... you still own the source code.")
 
-        await ctx.send(f"no, heck off {ctx.author.name}")
+        await ctx.send(f"nope {ctx.author.name} ♥!")
 
     @commands.command()
     @commands.check(permissions.is_owner)
@@ -92,7 +92,7 @@ class Admin(commands.Cog):
                 f"however the following failed...\n\n{output}"
             )
 
-        await ctx.send("Successfully reloaded all extensions")
+        await ctx.send("✅ successfully reloaded all extensions!")
 
     @commands.command()
     @commands.check(permissions.is_owner)
@@ -113,7 +113,7 @@ class Admin(commands.Cog):
     @commands.check(permissions.is_owner)
     async def reboot(self, ctx):
         """ Reboot the bot """
-        await ctx.send("Rebooting now...")
+        await ctx.send("😴 rebooting now...")
         time.sleep(1)
         sys.exit(0)
 
@@ -123,9 +123,9 @@ class Admin(commands.Cog):
         """ DM the user of your choice """
         try:
             await user.send(message)
-            await ctx.send(f"✉️ Sent a DM to **{user}**")
+            await ctx.send(f"✉️ sent a DM to **{user}**!")
         except discord.Forbidden:
-            await ctx.send("This user might be having DMs blocked or it's a bot account...")
+            await ctx.send("this user may have their DMs blocked or may be a bot.")
 
     @commands.group()
     @commands.check(permissions.is_owner)
@@ -151,7 +151,7 @@ class Admin(commands.Cog):
                 status=status_type.get(status, discord.Status.online)
             )
             self.change_config_value("playing", playing)
-            await ctx.send(f"Successfully changed playing status to **{playing}**")
+            await ctx.send(f"✅ successfully changed playing status to **{playing}**!")
         except discord.InvalidArgument as err:
             await ctx.send(err)
         except Exception as e:
@@ -163,7 +163,7 @@ class Admin(commands.Cog):
         """ Change username. """
         try:
             await self.bot.user.edit(username=name)
-            await ctx.send(f"Successfully changed username to **{name}**")
+            await ctx.send(f"✅ successfully changed username to **{name}**!")
         except discord.HTTPException as err:
             await ctx.send(err)
 
@@ -174,9 +174,9 @@ class Admin(commands.Cog):
         try:
             await ctx.guild.me.edit(nick=name)
             if name:
-                await ctx.send(f"Successfully changed nickname to **{name}**")
+                await ctx.send(f"✅ successfully changed nickname to **{name}**!")
             else:
-                await ctx.send("Successfully removed nickname")
+                await ctx.send("✅ successfully removed nickname!")
         except Exception as err:
             await ctx.send(err)
 
@@ -192,15 +192,15 @@ class Admin(commands.Cog):
         try:
             bio = await http.get(url, res_method="read")
             await self.bot.user.edit(avatar=bio)
-            await ctx.send(f"Successfully changed the avatar. Currently using:\n{url}")
+            await ctx.send(f"✅ successfully changed the avatar. currently: \n{url}")
         except aiohttp.InvalidURL:
-            await ctx.send("The URL is invalid...")
+            await ctx.send("❌ the url is invalid!")
         except discord.InvalidArgument:
-            await ctx.send("This URL does not contain a useable image")
+            await ctx.send("❌ this url does not contain a useable image!")
         except discord.HTTPException as err:
             await ctx.send(err)
         except TypeError:
-            await ctx.send("You need to either provide an image URL or upload one with the command")
+            await ctx.send("❌ please provide an image (url or upload).")
 
 
 def setup(bot):
