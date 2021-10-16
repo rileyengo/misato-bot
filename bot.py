@@ -9,7 +9,7 @@ from utils.data import Bot, HelpFormat
 
 bot = commands.Bot(command_prefix="?")
 TOKEN = os.getenv("TOKEN")
-initial_extensions = ['modules.admin.cog']
+initial_extensions = ['modules.admin']
 client = discord.Client()
 
 @bot.event
