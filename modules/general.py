@@ -9,6 +9,14 @@ class General(commands.Cog):
         self.bot = bot
 
     @commands.command()
+    async def about(self, ctx):
+	    """about me"""
+            embed=discord.Embed(title="misato", description="misato from evangelion \n discord.py ⋅ created 2018 ⋅ [repo](https://github.com/rileyengo/misato-bot)", color=0x4c4e9e)
+            embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/524084799586041867/898739625600884836/image0.jpg")
+            await ctx.send(embed=embed)
+
+
+    @commands.command()
     async def ping(self, ctx):
 	    """ping!"""
 	    await ctx.send('🏓 pong!')
@@ -20,7 +28,7 @@ class General(commands.Cog):
 
     @commands.command()
     async def avatar(self, ctx, user: discord.User or discord.Message.author):
-	    """get a user's avatar"""
+	    """get a user's avatar (doesn't work rn)"""
 	    await ctx.send(user.avatar_url)
 
 def setup(bot):
