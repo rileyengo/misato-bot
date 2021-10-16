@@ -201,6 +201,12 @@ class Admin(commands.Cog):
             await ctx.send(err)
         except TypeError:
             await ctx.send("❌ please provide an image (url or upload).")
+    
+    @commands.command(name='repeat')
+    @commands.check(permissions.is_owner)
+    async def repeat(self, ctx, *, arg):
+	    """ Repeats what you say. """
+	    await ctx.send(arg)
 
 
 def setup(bot):
