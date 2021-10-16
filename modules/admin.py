@@ -45,41 +45,41 @@ class Admin(commands.Cog):
     async def load(self, ctx, name: str):
         """ Loads an extension. """
         try:
-            self.bot.load_extension(f"cogs.{name}")
+            self.bot.load_extension(f"modules.{name}")
         except Exception as e:
             return await ctx.send(default.traceback_maker(e))
-        await ctx.send(f"Loaded extension **{name}.py**")
+        await ctx.send(f"loaded extension **{name}.py**")
 
     @commands.command()
     @commands.check(permissions.is_owner)
     async def unload(self, ctx, name: str):
         """ Unloads an extension. """
         try:
-            self.bot.unload_extension(f"cogs.{name}")
+            self.bot.unload_extension(f"modules.{name}")
         except Exception as e:
             return await ctx.send(default.traceback_maker(e))
-        await ctx.send(f"Unloaded extension **{name}.py**")
+        await ctx.send(f"unloaded extension **{name}.py**")
 
     @commands.command()
     @commands.check(permissions.is_owner)
     async def reload(self, ctx, name: str):
         """ Reloads an extension. """
         try:
-            self.bot.reload_extension(f"cogs.{name}")
+            self.bot.reload_extension(f"modules.{name}")
         except Exception as e:
             return await ctx.send(default.traceback_maker(e))
-        await ctx.send(f"Reloaded extension **{name}.py**")
+        await ctx.send(f"reloaded extension **{name}.py**")
 
     @commands.command()
     @commands.check(permissions.is_owner)
     async def reloadall(self, ctx):
-        """ Reloads all extensions. """
+        """ reloads all extensions. """
         error_collection = []
-        for file in os.listdir("cogs"):
+        for file in os.listdir("modules"):
             if file.endswith(".py"):
                 name = file[:-3]
                 try:
-                    self.bot.reload_extension(f"cogs.{name}")
+                    self.bot.reload_extension(f"modules.{name}")
                 except Exception as e:
                     error_collection.append(
                         [file, default.traceback_maker(e, advance=False)]
@@ -88,8 +88,8 @@ class Admin(commands.Cog):
         if error_collection:
             output = "\n".join([f"**{g[0]}** ```diff\n- {g[1]}```" for g in error_collection])
             return await ctx.send(
-                f"Attempted to reload all extensions, was able to reload, "
-                f"however the following failed...\n\n{output}"
+                f"❌ attempted to reload all extensions, was able to reload. "
+                f"however the following failed: \n\n{output}"
             )
 
         await ctx.send("✅ successfully reloaded all extensions!")
@@ -103,11 +103,11 @@ class Admin(commands.Cog):
             module_name = importlib.import_module(f"utils.{name}")
             importlib.reload(module_name)
         except ModuleNotFoundError:
-            return await ctx.send(f"Couldn't find module named **{name_maker}**")
+            return await ctx.send(f"couldn't find module named **{name_maker}**")
         except Exception as e:
             error = default.traceback_maker(e)
-            return await ctx.send(f"Module **{name_maker}** returned error and was not reloaded...\n{error}")
-        await ctx.send(f"Reloaded module **{name_maker}**")
+            return await ctx.send(f"module **{name_maker}** returned error and was not reloaded.\n{error}")
+        await ctx.send(f"reloaded module **{name_maker}**")
 
     @commands.command()
     @commands.check(permissions.is_owner)
@@ -123,7 +123,7 @@ class Admin(commands.Cog):
         """ DM the user of your choice """
         try:
             await user.send(message)
-            await ctx.send(f"✉️ sent a DM to **{user}**!")
+            await ctx.send(f"✉️ sent a DM to **{user}**")
         except discord.Forbidden:
             await ctx.send("this user may have their DMs blocked or may be a bot.")
 
