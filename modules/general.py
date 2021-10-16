@@ -4,10 +4,9 @@ from discord.ext import commands
 from utils import permissions
 from random import choice
 
-
 class General(commands.Cog):
-	def __init__(self, bot):
-		self.bot = bot
+    def __init__(self, bot):
+        self.bot = bot
 
     @commands.command()
     async def ping(self, ctx):
