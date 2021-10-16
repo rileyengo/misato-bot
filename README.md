@@ -1,2 +1,3 @@
-# misato-bot
-Discord bot written in discord.py
+# misato 🪐
+discord.py bot
+private project, contact to invite!
