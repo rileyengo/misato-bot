@@ -19,7 +19,7 @@ class General(commands.Cog):
         await ctx.send(''.join(choice((str.upper, str.lower))(c) for c in arg)) 
 
     @commands.command()
-    async def avatar(self, user: discord.User, ctx):
+    async def avatar(self, ctx, user: discord.User or discord.Message.author):
 	    """get a user's avatar"""
 	    await ctx.send(user.avatar_url)
 
