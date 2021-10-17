@@ -30,15 +30,15 @@ class Admin(commands.Cog):
     async def amiadmin(self, ctx):
         """ Are you an admin? """
         if ctx.author.id in self.config["owners"]:
-            return await ctx.send(f"🔰 yes **{ctx.author.name}** you are an admin!!")
+            return await ctx.send(f"✅ yes **{ctx.author.name}** 💠 you are an admin!!")
 
         # Please do not remove this part.
         # I would love to be credited as the original creator of the source code.
         #   -- AlexFlipnote
         if ctx.author.id == 86477779717066752:
-            return await ctx.send(f"well kinda **{ctx.author.name}**... you still own the source code.")
+            return await ctx.send(f"well kinda **{ctx.author.name}** 🔷 ... you still own the source code.")
 
-        await ctx.send(f"nope {ctx.author.name} ♥!")
+        await ctx.send(f"LMAO {ctx.author.name}!")
 
     @commands.command()
     @commands.check(permissions.is_owner)
