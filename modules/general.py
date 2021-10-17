@@ -29,7 +29,7 @@ class General(commands.Cog):
     @commands.command()
     async def mocku(self, ctx, user: discord.User):
         """ mock someone else """
-        channel = discord.utils.get(client.get_all_channels(), guild__name=discord.Guild.name, name=discord.TextChannel.name)
+        channel = discord.utils.get(discord.Client().get_all_channels(), guild__name=discord.Guild.name, name=discord.TextChannel.name)
         msg = await channel.history().get(author__name=user)
         await ctx.send(''.join(choice((str.upper, str.lower))(c) for c in msg)) 
 
